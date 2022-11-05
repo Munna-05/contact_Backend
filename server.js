@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     res.send("api is running")
 })
 
-mongoose.connect(process.env.DB_CONNECTION_URL).then(() => {
+mongoose.connect('mongodb+srv://munna:munna123@cluster0.hcyg4.mongodb.net/Contact?retryWrites=true&w=majority').then(() => {
     console.log("DataBase connection successfull")
 }).catch(() => {
     console.log('Connection Error')
