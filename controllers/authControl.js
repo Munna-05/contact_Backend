@@ -11,9 +11,10 @@ import Message from '../model/Message.js'
 export const controller = {
 
 
-    getMessages:(req,res)=>{
+    getMessages:async(req,res)=>{
         console.log('messages')
-        res.send(req.body)
+        const details =await Message.find().sort({date:-1})
+        res.send(details)
 
     },
     saveMessage:async(req,res)=>{
